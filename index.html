@@ -222,79 +222,79 @@ function update() {
     }
 
     // 碰撞检测
-    为 (让 我=敌人.长度 - 1; 我>=0; 我--) {
-        为 (让 j=playerBullets.长度 - 1; j>=0; j--) {
-            如果 (isColliding(敌人[我], playerBullets[j])) {
-                敌人.拼接(我, 1);
-                playerBullets.拼接(j, 1);
-                分数+=100;
-                scoreEl.textContent=分数;
-                打破;
+    for (let i = enemies.length - 1; i >= 0; i--) {
+        for (let j = playerBullets.length - 1; j >= 0; j--) {
+            if (isColliding(enemies[i], playerBullets[j])) {
+                enemies.splice(i, 1);
+                playerBullets.splice(j, 1);
+                score += 100;
+                scoreEl.textContent = score;
+                break;
             }
         }
     }
 
-    为 (让 我=敌人子弹.长度 - 1; 我>=0; 我--) {
-        如果 (isColliding(运动员, 敌人子弹[我])) {
-            敌人子弹.拼接(我, 1);
+    for (let i = enemyBullets.length - 1; i >= 0; i--) {
+        if (isColliding(player, enemyBullets[i])) {
+            enemyBullets.splice(i, 1);
             hitPlayer();
         }
     }
 
-    为 (让 我=敌人.长度 - 1; 我>=0; 我--) {
-        如果 (isColliding(运动员, 敌人[我])) {
-            敌人.拼接(我, 1);
+    for (let i = enemies.length - 1; i >= 0; i--) {
+        if (isColliding(player, enemies[i])) {
+            enemies.splice(i, 1);
             hitPlayer();
         }
-html    }
-    
+    }
+}
 
-功能 函数hitPlayer(){() {
-lives--；lives--;
-livesEl.textContent = lives；livesEl.textContent = lives;
-if(lives <= 0){if (lives <= 0) {
-gameOver = true；gameOver = true;
-html    }    }
-html
+function hitPlayer() {
+    lives--;
+    livesEl.textContent = lives;
+    if (lives <= 0) {
+        gameOver = true;
+    }
+}
 
-html(rect1，rect2){(rect1，rect2){(rect1，rect2){(rect1，rect2){
-rect1，rect2
-函数isColliding
-width
-x
-height
-y；
+function isColliding(rect1, rect2) {
+    if (!rect1 || !rect2) return false;
+    return rect1.x < rect2.x + rect2.width &&
+           rect1.x + rect1.width > rect2.x &&
+           rect1.y < rect2.y + rect2.height &&
+           rect1.y + rect1.height > rect2.y;
+}
 
-函数draw(){(){
-ctx.clearRect(0，0，画布。宽度，画布。高度)；.clearRect(0，0，画布。宽度，画布.height)；
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // 玩家
-ctx.fillStyle = player.color；.fillStyle = player.color；
-color；
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
 
-    // 玩家子弹// 玩家子弹
-playerBullets的字母b
-// 玩家子弹// 玩家子弹
-color；
-        }
-
-    // 敌机
-for(以e表示敌人){(以e表示敌人){(以e表示敌人){(以e表示敌人){(以e表示敌人){(以e表示敌人){(以e表示敌人){(以e表示敌人){
-以e表示敌人
-颜色；。fillRect(e.x，e.Y，e.width，e.X)height)；.fillRect(e.x，e.Y，e.width，e.x)height)；.fillRect(e.x，e.Y，e.width，e.x)height)；.fillRect(e.x，e.Y，e.width，e.x)height)；.fillRect(e.x，e.Y，e.width，e.x)height)；.fillRect(e.x，e.Y，e.width，e.x)height)；.fillRect(e.x，E.Y，e.width，e.height)；.fillRect(e.x，E.Y，e.width，e.height)；
-        }
-
-    // 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹// 敌机子弹
-for(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){电子商务让敌人子弹的eb让敌人子弹的电子商务。fillStyle{{(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){<)让敌人子弹的eb(让敌人子弹的eb){电子商务让敌人子弹的eb让敌人子弹的电子商务。fillStyle{{(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){让敌人子弹的eb){<)让敌人子弹的eb(让敌人子弹的eb){电子商务让敌人子弹的eb让敌人子弹的电子商务。fillStyle{{(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){(让敌人子弹的eb){
-让敌人子弹的电子商务。fillStyle电子商务。颜色；。fillStyle
-让敌人子弹的电子商务。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=()；.beginPath()；。==电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=()；.beginPath()；。=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=()；.beginPath()；.beginPath()；.beginPath=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.color；.fillStyle=电子商务.颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；.fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=电子商务。颜色；=电子商务。颜色；。fillStyle=电子商务。颜色；。fillStyle=()；.beginPath()；.beginPath()；.()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；.beginPath()；
-CTX弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.((电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(e(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(e(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(e(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(e(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*b.x+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*b.x+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*电子商务。宽度/2，0，数学π*2)；.弧(eb.X+eb.width/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.width/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，2，数学π*2)；X+eb.宽度/2，eb.y+eb高度/2，eb.宽度/2，0，数学.X+电子商务.宽度/2(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π(电子商务.X+电子商务.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(电子商务.X+电子商务.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*电子商务。宽度/2，0，数学π*2)；.弧(eb.X+eb.width/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.width/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，2，数学π*2)；X+eb.宽度/2，eb.y+eb高度/2，eb.宽度/2，0，数学π*π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.Y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+电子商务.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+电子商务。宽度/2，eb.Y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.y+eb.high/2，宽/2，2，0，数学Pi*2)；/2，eb.Y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；Y+eb.高度/2，eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.圆弧(eb.X+eb.宽度/2，eb.Y+eb.高度/2，eb.宽度/2，0，数学π*2)；(eb.X+eb.宽度/2，eb.y+Eb高度/2，Eb.宽度/2，0，数学π*2)；.弧(eb.X+eb.宽度/2，eb.y+eb.high/2，宽/2，2，0，数学Pi*2)；
-CTX.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；.填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；。填满()；
-                                                                                                                                                                                                                                                         }
+    // 玩家子弹
+    for (let b of playerBullets) {
+        ctx.fillStyle = b.color;
+        ctx.fillRect(b.x, b.y, b.width, b.height);
     }
 
-requestAnimationFrame(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；(游戏循环)；
-</剧本>/剧本>/剧本>/剧本>/剧本>/剧<书>/剧本>/剧本>/剧本>/剧本>/剧本>/剧<书>/剧本></剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧<书>/剧本>/剧本>/剧本>/剧本>/剧<书>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧本>/剧>
+    // 敌机
+    for (let e of enemies) {
+        ctx.fillStyle = e.color;
+        ctx.fillRect(e.x, e.y, e.width, e.height);
+    }
 
- < 
- < 
+    // 敌机子弹
+    for (let eb of enemyBullets) {
+        ctx.fillStyle = eb.color;
+        ctx.beginPath();
+        ctx.arc(eb.x + eb.width / 2, eb.y + eb.height / 2, eb.width / 2, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+requestAnimationFrame(gameLoop);
+</script>
+
+</body>
+</html>
